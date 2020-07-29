@@ -8,6 +8,7 @@ import { TokenstorageService } from './tokenstorage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -28,10 +29,13 @@ export class AppComponent implements OnInit {
 
       this.username = user.username;
     }
+
+ 
   }
 
   logout() {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
 }

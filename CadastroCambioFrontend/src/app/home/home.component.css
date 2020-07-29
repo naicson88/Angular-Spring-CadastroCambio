@@ -1,0 +1,123 @@
+
+#divCotacaoMoedas {
+    width: 450px;
+    height: 520px;
+    margin-top: 10px;
+    margin-right: 5px;
+    justify-content:space-around;
+    padding: 10px;
+    
+}
+#flags{
+    position: relative;
+    width: 65px;
+    height: 240px;
+    margin-top: 130px; 
+    border:none;
+    margin-left: 60px;
+    
+}  
+ul {
+    margin-top: 30px; 
+    margin-left: -50px;
+    list-style-type: none;
+
+}
+li {
+
+    margin-left: 13px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    
+}
+
+
+
+#cotacao{
+    margin-left: 100px;
+    display: flex;
+    position: relative;
+}
+
+#tabelaCotacao{
+    margin-top: -350px;
+    margin-left: 25px;
+    border: solid thin;
+    position: relative;
+}
+
+#graficosCotacao{
+    border: solid thin;
+    width: 62%;
+    height: 500px;
+    position: relative;
+    margin-top: -490px;
+    margin-left: 40px;
+}
+
+#tableHome{
+    position: relative;
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+
+#tableFechados{
+    position: relative;
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 0px;
+    
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+#tabelaFechados thead {
+   background-color: #228B22;
+   color: #ffffff
+}
+
+#tabelaFechados >tbody>tr:nth-child(odd)>td, 
+#tabelaFechados>tbody>tr:nth-child(odd)>th {
+   background-color: #8FBC8F;
+
+}
+
+#tabelaHome thead {
+    background-color: #FFD700;
+    color: #36304a;
+}
+
+#calculadora {
+    margin-top: -200px;
+    margin-right: 70px;
+}
+
+#footer{
+     
+        position:absolute;
+       margin-top: 350px;
+          width:100%;    
+}
+
+input:checked + .graphColapse{
+    height: 100%;
+}
+
+label input[type="checkbox"] {
+    display: none;
+}
+
+
+

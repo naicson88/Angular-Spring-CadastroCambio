@@ -1,1 +1,169 @@
-<p>home works!</p>
+
+<app-header></app-header>
+<div id="accordion">
+    <div class="card " >
+      <div class="card-header bar" id="headingOne" style="height: 35px; text-align: center;">
+        <h5 class="mb-0" style="margin-top: -15px;">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" style=" position: relative;"
+          aria-expanded="false" aria-controls="collapseOne" id="btnColapse" (click)="colapseCheckDetalhado()">
+            Mostrar movimentação detalhada do cambio dia
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <iframe style=" margin-top: -5px; position: relative" class="frame"
+            src="https://br.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=2103,1473,1617,1890" 
+            width="100%" height="230px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0">
+        </iframe>
+        </div>
+    </div>
+    </div>
+<div id="divCotacaoMoedas" class="moeda container">
+    <div id="flags">
+        <ul>
+            <li><img class="bandeira" style=" margin-bottom: 10px; margin-top: 30px;"src="assets/bandeirasPaises/eua.jpg" width="55px" height="35px"></li>
+            <li><img class="bandeira" style=" margin-bottom: 10px;" src="assets/bandeirasPaises/unieu.png" width="55px" height="35px"></li>
+            <li><img class="bandeira" style=" margin-bottom: 15px;"  src="assets/bandeirasPaises/japao.png" width="55px" height="35px"></li>
+            <li><img class="bandeira" style=" margin-bottom: 10px;"  src="assets/bandeirasPaises/arg.jpg" width="55px" height="35px"></li>
+        </ul>
+    </div>
+    <div id="tabelaCotacao">
+        <iframe  id="cotacao"
+        src="https://br.widgets.investing.com/live-currency-cross-rates?theme=lightTheme&pairs=2103,1617,1890,1473"
+         width="300px" height="480px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0">
+        </iframe>
+    </div>
+</div>
+
+<div id="graficosCotacao">
+        <button class="btn btn-outline-secondary" 
+        data-toggle="collapse" href="#collapseExample"
+         role="button" aria-expanded="false" aria-controls="collapseExample" id="colapseGraficos" >
+        <i class="fa fa-line-chart" ></i> &nbsp; Graficos de acompanhamento </button>
+
+        <button type="button" class="btn btn-outline-info" style="margin-left: 10px;" (click)="popupCnversor()">
+            <i class="fa fa-calculator" aria-hidden="true" ></i> Conversor monetário</button>
+       
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body" style="padding: 5px;">
+                <div id="graficosCotacaoInside" style="margin: auto;">
+                    <iframe 
+                scrolling="no" allowtransparency="true"
+                frameborder="0" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22FX_IDC%3AUSDBRL%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22dateRange%22%3A%221d%22%2C%22colorTheme%22%3A%22light%22%2C%22trendLineColor%22%3A%22%2337a6ef%22%2C%22underLineColor%22%3A%22%23E3F2FD%22%2C%22isTransparent%22%3Afalse%2C%22autosize%22%3Atrue%2C%22largeChartUrl%22%3A%22%22%2C%22utm_source%22%3A%22localhost%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22mini-symbol-overview%22%7D" 
+                style="box-sizing: border-box; height: 220px; width: 350px; margin-top: 10px;">
+                 </iframe>
+    
+                <iframe 
+                scrolling="no" allowtransparency="true" frameborder="0" 
+                src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22FX_IDC%3AEURBRL%22%2C%22width%22%3A%22350%22%2C%22height%22%3A%22220%22%2C%22dateRange%22%3A%221d%22%2C%22colorTheme%22%3A%22light%22%2C%22trendLineColor%22%3A%22%2337a6ef%22%2C%22underLineColor%22%3A%22%23E3F2FD%22%2C%22isTransparent%22%3Afalse%2C%22autosize%22%3Afalse%2C%22largeChartUrl%22%3A%22%22%2C%22utm_source%22%3A%22localhost%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22mini-symbol-overview%22%7D" 
+                style="box-sizing: border-box; height: 220px; width: 350px; margin-left: 10px;">
+                </iframe> <br>
+
+                <iframe 
+                scrolling="no" allowtransparency="true" 
+                frameborder="0" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22FX_IDC%3AJPYBRL%22%2C%22width%22%3A%22350%22%2C%22height%22%3A%22220%22%2C%22dateRange%22%3A%221d%22%2C%22colorTheme%22%3A%22light%22%2C%22trendLineColor%22%3A%22%2337a6ef%22%2C%22underLineColor%22%3A%22%23E3F2FD%22%2C%22isTransparent%22%3Afalse%2C%22autosize%22%3Afalse%2C%22largeChartUrl%22%3A%22%22%2C%22utm_source%22%3A%22localhost%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22mini-symbol-overview%22%7D" 
+                style="box-sizing: border-box; height: 220PX; width: 350px;">
+                </iframe>
+
+                <iframe 
+                scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22FX_IDC%3AARSBRL%22%2C%22width%22%3A%22350%22%2C%22height%22%3A%22220%22%2C%22dateRange%22%3A%221d%22%2C%22colorTheme%22%3A%22light%22%2C%22trendLineColor%22%3A%22%2337a6ef%22%2C%22underLineColor%22%3A%22%23E3F2FD%22%2C%22isTransparent%22%3Afalse%2C%22autosize%22%3Afalse%2C%22largeChartUrl%22%3A%22%22%2C%22utm_source%22%3A%22localhost%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22mini-symbol-overview%22%7D" 
+                style="box-sizing: border-box; height: 220px; width: 350px;  margin-left: 10px;">
+                </iframe>
+                </div>
+            </div>
+       </div>
+
+       <div id="tableHome" >
+        <table class="table table-sm table-striped" id="tabelaHome">
+            <caption>Cambios a vencer próximos 10 dias</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Vencimento</th>
+                <th scope="col">Fornecedor</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div id="tableFechados" >
+        <table class="table table-sm table-striped" id="tabelaFechados">
+            <caption>Cambios fechados nos ultimos 5 dias</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Dt. Pagamento</th>
+                <th scope="col">Fornecedor</th>
+                <th scope="col">Valor USD</th>
+                <th scope="col">Valor Real</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+
+
+ <!-- <div id="calculadora">
+    <iframe style="float: right;"
+src="http://currencyrate.today/load-converter?&amp;lg=pt&amp;tz=-3s&amp;fm=USD&amp;to=BRL&amp;st=info&amp;lr=1&amp;rd=0"
+ width="220" height="258" frameborder="0" scrolling="no">
+</iframe> 
+</div> -->
+
+<div id="footer">
+    <app-footer></app-footer>
+</div>
+
+
+
+
+   
