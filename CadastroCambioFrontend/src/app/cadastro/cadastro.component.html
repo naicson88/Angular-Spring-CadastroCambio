@@ -1,0 +1,107 @@
+
+<p>
+    <a class="btn btn-primary" id="open" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Cadastrar
+    </a>
+</p>
+<div class="collapse" id="collapseExample" width="256px" style="box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);">
+    <div class="card card-body">
+        <h1 class="display-6 card-header" style="margin-bottom: 20px;">Cadastrar</h1>
+        <form  #form="ngForm" autocomplete="on" (submit)="onSubmit(form)" class="formulario">
+            <input type="hidden"  name="id" [(ngModel)]="tabela.id">
+
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <input   id="dtVenc" name="dtVenc" [(ngModel)]="tabela.vencimento "  type="date"
+                    onkeyup="
+                        var v = this.value;
+                        if (v.match(/^\d{2}$/) !== null) {
+                            this.value = v + '/';
+                        } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                            this.value = v + '/';
+                        }"
+                    maxlength="10" class="form-control" placeholder="Vencimento">
+                </div>
+                <div class="form-group col-md-8">
+                    <input  id="fornecedor" name="fornecedor"  [(ngModel)]="tabela.fornecedor" class="form-control" placeholder="Fornecedor" required>
+                 <!-- <div *ngIf="fornecedor.invalid && fornecedor.touched" class="validation-error" style="color: red;">Campo obrigatório</div> -->
+                </div>
+            </div>
+
+            <div class="form-row" >
+                <div class="form-group col-md-4">
+                    <input id="invoice" name="invoice"  [(ngModel)]="tabela.invoice" class="form-control" placeholder="Invoice">
+                </div>
+                <div class="form-group col-md-5">
+                    <input id="tipo" name="tipo" [(ngModel)]="tabela.tipo" class="form-control" placeholder="Tipo">
+                </div>
+            </div>
+            <div class="form-row" >
+                <div class="form-group col-md-5">
+                    <input id="di" name="di"  [(ngModel)]="tabela.numDI" class="form-control" placeholder="Nº D.I">
+                </div>
+                <div class="form-group col-md-5">
+                    <input type="text" id="vlDolar" name="vlDolar" [(ngModel)]="tabela.valorInvoice" class="form-control mask2" placeholder="Valor Invoice">
+                </div>
+                <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
+                    <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
+                </div>
+            </div>
+            <div class="form-row" >
+                <div class="form-group col-md-5">
+                    <input type="text" id="vlPago" name="vlPago" [(ngModel)]="tabela.valorPago" class="form-control mask2" placeholder="Valor Pago">
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" id="cotacao" name="cotacao" [(ngModel)]="tabela.cotacao" class="form-control mask"  placeholder="Cotação">
+                </div>
+                <div class="form-group col-md-4">
+                    <input id="vlReal" name="vlReal" [(ngModel)]="tabela.valorReal" class="form-control mask"  placeholder="Valor Real">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                        <input id="dtFecha" name="dtFecha" type="date" [(ngModel)]="tabela.dtFechamento" class="form-control" placeholder="Dt. Fechamento">
+                </div>
+                <div class="form-group col-md-7">
+                    <input name="banco" [(ngModel)]="tabela.banco" class="form-control" placeholder="Banco">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input name="contrato" [(ngModel)]="tabela.numContrato" class="form-control" placeholder="Nº Contrato" >
+                </div>
+                <div class="form-group col-md-6">
+                    <input name="modal"  [(ngModel)]="tabela.modal" class="form-control" placeholder="Modal" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input id="nBlHawb"  name="nBlHawb"  [(ngModel)]="tabela.conhecimento" class="form-control" placeholder="Nº BL/HAWB" >
+                </div>
+            </div>
+            <div class="custom-file" id="customFile" lang="es">
+                <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                <label class="custom-file-label" for="exampleInputFile">
+                Anexar Contrato
+                </label>
+            </div>
+            <div class="custom-file" id="customFile" lang="es" style="margin-top: 10px;">
+                <input type="file" class="custom-file-input c2" id="exampleInputFile" aria-describedby="fileHelp">
+                <label class="custom-file-label" for="exampleInputFile">
+                Anexar Swift
+                </label>
+            </div>
+            <!-- <div class="form-group">
+                    <label class="custom-file-label" class="label">Anexar Contrato</label>
+                    <input type="file" style="border: solid thin; background-color: white;"name="anxSwift" class="form-control-file">
+                </div> -->
+            <div class="form-group" style="margin-top: 10px;">
+                <button type="submit"  class="btn btn-lg btn-block btn-info" style="width: 100px;" (click)="salvarNaTabela()" >Enviar</button>
+
+            </div>
+         
+        </form>
+    </div>
+</div>

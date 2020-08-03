@@ -34,7 +34,7 @@ li {
 
 
 #cotacao{
-    margin-left: 100px;
+    margin-left: 90px;
     display: flex;
     position: relative;
 }
@@ -42,56 +42,55 @@ li {
 #tabelaCotacao{
     margin-top: -350px;
     margin-left: 25px;
-    border: solid thin;
+    border: solid thin #DCDCDC;
+   
+    padding: 5px;
     position: relative;
+    height: 100%;
 }
 
 #graficosCotacao{
-    border: solid thin;
+    
     width: 62%;
     height: 500px;
     position: relative;
-    margin-top: -490px;
-    margin-left: 40px;
+    margin-top: -510px;
+    margin-left: 20px;
 }
 
 #tableHome{
     position: relative;
     width: 90%;
-    margin-top: 30px;
-    margin-left: 0px;
+    margin-left: 50px;
+    
 }
 
 
 #tableFechados{
     position: relative;
     width: 90%;
-    margin-top: 30px;
-    margin-left: 0px;
+    margin-top: 40px;
+    margin-left: 50px;
     
+ 
 }
 
 table {
     border-spacing: 1;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
     overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
     box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    
 }
 
 #tabelaFechados thead {
-   background-color: #228B22;
+   background-color: #5F9EA0;
    color: #ffffff
 }
 
 #tabelaFechados >tbody>tr:nth-child(odd)>td, 
 #tabelaFechados>tbody>tr:nth-child(odd)>th {
-   background-color: #8FBC8F;
-
+   background-color: #F5F5F5;
 }
 
 #tabelaHome thead {
@@ -105,10 +104,12 @@ table {
 }
 
 #footer{
-     
-        position:absolute;
-       margin-top: 350px;
-          width:100%;    
+    
+        width: 161%;
+        margin-top: 100px;
+        bottom: 0;
+        position: relative;
+        margin-left: -20px;
 }
 
 input:checked + .graphColapse{

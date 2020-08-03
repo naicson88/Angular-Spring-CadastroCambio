@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="register col-md-5" style="margin: 20px 0 20px;">
+    <app-cadastro ></app-cadastro>
+</div>
+
+<table id="tabelaPrincipal">
+    <thead >
+      <tr style="background-color:#1E90FF; color: white; height: 15px;">  
+        <th>Vencimento</th>
+        <th >Fornecedor</th>
+        <th>Invoice</th>
+        <th>Tipo</th>
+        <th>Valor Invoice</th>
+        <th>Valor Pago</th>
+        <th>Cotação</th>
+        <th>Valor R$</th>
+        <th>Dt.Fechamento</th>
+        <th>Banco</th>
+        <th>Contrato</th>
+        <th>Nº D.I</th>
+        <th>Modal</th>
+        <th>BL/HAWB</th>
+        <th>Excluir</th>
+        <th>Editar</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tabela of tabela" >
+            <td width="6%">{{tabela.vencimento |  date:"dd/MM/yyyy" }} </td> 
+            <td width="14%" >{{tabela.fornecedor}} </td>
+            <td width="10%" >{{tabela.invoice}} </td>  <!--30-->
+            <td width="7%" >{{tabela.tipo}} </td> 
+            <td width="8%" >{{tabela.valorInvoice | currency:'$ '}}</td> 
+            <td width="8%" >{{tabela.valorPago |  currency:'$ '}}</td> <!--53-->
+            <td width="7%" >{{tabela.cotacao |  currency:'R$ '}}</td>
+            <td width="8%" >{{tabela.valorReal |  currency:'R$ '}}</td>
+            <td width="6%" class="fech">{{tabela.dtFechamento | date:"dd/MM/yyyy" }}</td><!--74-->
+            <td width="8%" >{{tabela.banco}}</td>
+            <td width="7%" >{{tabela.numContrato}}</td>
+            <td width="7%" >{{tabela.numDI}}</td> <!--97-->
+            <td width="7%" >{{tabela.modal}}</td>
+            <td width="13%" >{{tabela.conhecimento}}</td> <!--118-->
+
+            <td width="1%" style="text-align: center !important;"><a class="btn tetx-danger" style="padding: 0px;" (click)="onDelete(emp.id)"><i class="fa fa-trash" style="color: red;padding: 0px;" ></i></a> </td>
+            <td width="1%" style="text-align: center !important;"><a class="btn tetx-danger" style="padding: 0px;"><i (click)="onEdit(emp)" class="fa fa-pencil-square-o" aria-hidden="true"  style="color:#8A2BE2; scroll-behavior: smooth; padding: 0px;"  ></i></a> </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+

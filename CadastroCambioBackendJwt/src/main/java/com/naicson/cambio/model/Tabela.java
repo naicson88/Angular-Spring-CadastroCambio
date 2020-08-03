@@ -2,7 +2,10 @@ package com.naicson.cambio.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -13,47 +16,87 @@ import javax.validation.constraints.Size;
 public class Tabela {
 	
 	@Id
+	@Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Size(max = 20)
+	
 	private Date vencimento;
 	@Size(max = 50)
 	private String fornecedor;
 	@Size(max = 50)
 	private String invoice;
 	@Size(max = 20)
-	private Double valorInvoice;
-	@Size(max = 20)
-	private Double valorPago;
-	@Size(max = 20)
-	private Double cotacao;
-	@Size(max = 50)
-	private String banco;
-	@Size(max = 20)
-	private Double valorReal;
-	@Size(max = 50)
-	private Integer numContrato;
+	private String tipo;
 	@Size(max = 50)
 	private String numDI;
+	
+	private Double valorInvoice;
+	
+	private Double valorPago;
+	
+	private Double cotacao;
+	
+	private Double valorReal;
+	
+	private Date dtFechamento;
+	@Size(max = 50)
+	private String banco;
+	@Size(max = 50)
+	private String numContrato;
+	@Size(max = 50)
+	private String modal;
 	@Size(max = 50)
 	private String conhecimento;
 	
-	public Tabela () {}
 
-	public Tabela(int id, Date vencimento, String fornecedor, String invoice, Double valorInvoice, Double valorPago,
-			Double cotacao, String banco, Double valorReal, Integer numContrato, String numDI, String conhecimento) {
+	public Tabela () {}
+	
+	public Tabela(int id, @Size(max = 20) Date vencimento, @Size(max = 50) String fornecedor,
+			@Size(max = 50) String invoice, @Size(max = 20) String tipo, @Size(max = 50) String numDI,
+			@Size(max = 20) Double valorInvoice, @Size(max = 20) Double valorPago, @Size(max = 20) Double cotacao,
+			@Size(max = 20) Double valorReal, @Size(max = 20) Date dtFechamento, @Size(max = 50) String banco,
+			@Size(max = 50) String numContrato, @Size(max = 50) String modal, @Size(max = 50) String conhecimento) {
 		super();
-		id = id;
+		this.id = id;
 		this.vencimento = vencimento;
 		this.fornecedor = fornecedor;
 		this.invoice = invoice;
+		this.tipo = tipo;
+		this.numDI = numDI;
 		this.valorInvoice = valorInvoice;
 		this.valorPago = valorPago;
 		this.cotacao = cotacao;
-		this.banco = banco;
 		this.valorReal = valorReal;
+		this.dtFechamento = dtFechamento;
+		this.banco = banco;
 		this.numContrato = numContrato;
-		this.numDI = numDI;
+		this.modal = modal;
 		this.conhecimento = conhecimento;
+	}
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public Date getDtFechamento() {
+		return dtFechamento;
+	}
+
+	public void setDtFechamento(Date dtFechamento) {
+		this.dtFechamento = dtFechamento;
+	}
+
+	public String getModal() {
+		return modal;
+	}
+
+	public void setModal(String modal) {
+		this.modal = modal;
 	}
 
 	public int getId() {
@@ -128,11 +171,11 @@ public class Tabela {
 		this.valorReal = valorReal;
 	}
 
-	public Integer getNumContrato() {
+	public @Size(max = 50) String getNumContrato() {
 		return numContrato;
 	}
 
-	public void setNumContrato(Integer numContrato) {
+	public void setNumContrato(@Size(max = 50) String numContrato) {
 		this.numContrato = numContrato;
 	}
 
@@ -154,11 +197,13 @@ public class Tabela {
 
 	@Override
 	public String toString() {
-		return "Tabela [Id=" + id + ", vencimento=" + vencimento + ", fornecedor=" + fornecedor + ", invoice=" + invoice
-				+ ", valorInvoice=" + valorInvoice + ", valorPago=" + valorPago + ", cotacao=" + cotacao + ", banco="
-				+ banco + ", valorReal=" + valorReal + ", numContrato=" + numContrato + ", numDI=" + numDI
-				+ ", conhecimento=" + conhecimento + "]";
+		return "Tabela [id=" + id + ", vencimento=" + vencimento + ", fornecedor=" + fornecedor + ", invoice=" + invoice
+				+ ", tipo=" + tipo + ", numDI=" + numDI + ", valorInvoice=" + valorInvoice + ", valorPago=" + valorPago
+				+ ", cotacao=" + cotacao + ", valorReal=" + valorReal + ", dtFechamento=" + dtFechamento + ", banco="
+				+ banco + ", numContrato=" + numContrato + ", modal=" + modal + ", conhecimento=" + conhecimento + "]";
 	}
+
+	
 	
 	
 }

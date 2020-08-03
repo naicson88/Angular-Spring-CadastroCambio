@@ -4,12 +4,16 @@ import { Observable, BehaviorSubject, of } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 import { Usuario } from './classes/usuario';
 import { Router } from '@angular/router';
+import { TokenstorageService } from './tokenstorage.service';
 
 
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
+
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 
+    'Content-Type': 'application/json' 
+    })
 };
 
 @Injectable({
@@ -18,10 +22,10 @@ const httpOptions = {
 
 export class RestapiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private tokenstorage: TokenstorageService) { }
 
   login(credentials): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
+    return this.http.post(AUTH_API + 'login', {
       username: credentials.username,
       password: credentials.password
     }, httpOptions);

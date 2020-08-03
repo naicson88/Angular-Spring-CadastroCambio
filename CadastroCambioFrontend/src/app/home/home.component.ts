@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
+import { TokenstorageService } from '../tokenstorage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private login :TokenstorageService, private router: Router) { }
 
   ngOnInit() {
-
+    
+  
   }
 //Renomeia a div que mostra a tabela detabalha de cambio dia entre MOSTRAR/ESCONDER
   colapseCheckDetalhado(){

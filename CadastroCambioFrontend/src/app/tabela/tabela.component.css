@@ -1,0 +1,36 @@
+
+table {
+    border-spacing: 1;
+    overflow: hidden;
+    box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    width: 125%; 
+    margin-left: 10px;
+    margin-right: -10px;
+    font-family: helvetica;
+    color: rgba(94,93,82,1);
+    border-spacing: 0;
+}
+table tr {
+    display: table-row; 
+}
+table tr td {
+    padding: 3px;
+    font-size: 12px;
+    height: 8px;
+    border-left: 1px solid  rgb(213, 233, 238);
+    border-bottom: 1px solid  rgba(29,150,178,1);
+    vertical-align: middle;
+    
+}
+ th {
+    background-color: rgba(29,150,178,1);
+    border: 1px solid rgba(29,150,178,1);
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+#tabelaPrincipal >tbody>tr:nth-child(odd)>td, 
+#tabelaPrincipal>tbody>tr:nth-child(odd)>th {
+   background-color: rgba(94,93,82,.1);
+} 

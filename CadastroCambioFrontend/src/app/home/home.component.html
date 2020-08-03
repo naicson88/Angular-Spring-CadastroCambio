@@ -1,7 +1,8 @@
 
 <app-header></app-header>
+
 <div id="accordion">
-    <div class="card " >
+    <div class="card" >
       <div class="card-header bar" id="headingOne" style="height: 35px; text-align: center;">
         <h5 class="mb-0" style="margin-top: -15px;">
           <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" style=" position: relative;"
@@ -11,8 +12,8 @@
         </h5>
       </div>
 
-      <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
+      <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion" >
+        <div class="card-body"> 
             <iframe style=" margin-top: -5px; position: relative" class="frame"
             src="https://br.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=2103,1473,1617,1890" 
             width="100%" height="230px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0">
@@ -20,6 +21,7 @@
         </div>
     </div>
     </div>
+
 <div id="divCotacaoMoedas" class="moeda container">
     <div id="flags">
         <ul>
@@ -47,7 +49,7 @@
             <i class="fa fa-calculator" aria-hidden="true" ></i> Conversor monetário</button>
        
         <div class="collapse" id="collapseExample">
-            <div class="card card-body" style="padding: 5px;">
+            <div class="card card-body" style="padding: 5px;margin-top:7px;  box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);" >
                 <div id="graficosCotacaoInside" style="margin: auto;">
                     <iframe 
                 scrolling="no" allowtransparency="true"
@@ -75,9 +77,9 @@
             </div>
        </div>
 
-       <div id="tableHome" >
-        <table class="table table-sm table-striped" id="tabelaHome">
-            <caption>Cambios a vencer próximos 10 dias</caption>
+       <div id="tableHome " >
+        <table class="table table-sm table-striped table-bordered " id="tabelaHome" style="margin-top: 30px;">
+            <caption style="caption-side:top;text-align: center;">Cambios a vencer próximos 10 dias</caption>
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -108,16 +110,37 @@
                 <td>@twitter</td>
                 <td>@mdo</td>
               </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+              </tr>
             </tbody>
           </table>
     </div>
 
-    <div id="tableFechados" >
-        <table class="table table-sm table-striped" id="tabelaFechados">
-            <caption>Cambios fechados nos ultimos 5 dias</caption>
-            <thead>
+    <div id="divTabelas" >
+    <div id="tableFechados " >
+        <table class="table table-sm table-striped table-bordered " id="tabelaFechados" style="margin-top: 30px;border-radius: 10px;">
+            <caption style="caption-side:top; text-align: center;">Cambios fechados nos ultimos 5 dias</caption>
+            <thead >
               <tr>
-                <th scope="col">#</th>
+                <th scope="col" >#</th>
                 <th scope="col">Dt. Pagamento</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Valor USD</th>
@@ -145,9 +168,54 @@
                 <td>@twitter</td>
                 <td>@mdo</td>
               </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+              </tr>
             </tbody>
           </table>
     </div>
+  </div>
+
+    <footer id="footer" class="footer navbar-fixed-bottom">
+        <app-footer></app-footer>
+    </footer>
 </div>
 
 
@@ -159,9 +227,7 @@ src="http://currencyrate.today/load-converter?&amp;lg=pt&amp;tz=-3s&amp;fm=USD&a
 </iframe> 
 </div> -->
 
-<div id="footer">
-    <app-footer></app-footer>
-</div>
+
 
 
 
