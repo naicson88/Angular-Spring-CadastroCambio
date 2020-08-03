@@ -1,12 +1,14 @@
 
 <p>
-    <a class="btn btn-primary" id="open" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="btn btn-primary" id="open" data-toggle="collapse" href="#collapseExample" role="button"
+     aria-expanded="false" aria-controls="collapseExample" >
       Cadastrar
     </a>
 </p>
 <div class="collapse" id="collapseExample" width="256px" style="box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);">
-    <div class="card card-body">
-        <h1 class="display-6 card-header" style="margin-bottom: 20px;">Cadastrar</h1>
+    <div class="card card-body" style="border: solid thin #1E90FF;">
+        <h1 class="display-6 card-header" 
+        style="margin-bottom: 20px;background-color: #1E90FF;color: white;"> Cadastrar </h1>
         <form  #form="ngForm" autocomplete="on" (submit)="onSubmit(form)" class="formulario">
             <input type="hidden"  name="id" [(ngModel)]="tabela.id">
 
@@ -28,78 +30,110 @@
                 </div>
             </div>
 
-            <div class="form-row" >
-                <div class="form-group col-md-4">
-                    <input id="invoice" name="invoice"  [(ngModel)]="tabela.invoice" class="form-control" placeholder="Invoice">
-                </div>
-                <div class="form-group col-md-5">
-                    <input id="tipo" name="tipo" [(ngModel)]="tabela.tipo" class="form-control" placeholder="Tipo">
-                </div>
+        <div class="form-row" >
+            <div class="form-group col-md-4">
+                 <input id="invoice" name="invoice"  [(ngModel)]="tabela.invoice" class="form-control" placeholder="Invoice">
+              </div>
+             <div class="form-group col-md-5">
+                   <input list="tipos" id="tipo" name="tipo" [(ngModel)]="tabela.tipo" class="form-control" placeholder="Tipo">
+                   <datalist id="tipos">
+                    <option value="ANTECIPADO">
+                    <option value="A PRAZO">
+                    <option value="A VISTA">
+                    <option value="CERTIFICADO"> 
+                    <option value="ROYALTY">      
+                  </datalist>
+               </div>
+         </div>
+         <div class="form-row" >
+             <div class="form-group col-md-5">
+                 <input id="di" name="di"  [(ngModel)]="tabela.numDI" class="form-control" placeholder="Nº D.I">
+             </div>
+             <div class="form-group col-md-5">
+                 <input 
+                 type="text" id="vlDolar" name="vlDolar" [(ngModel)]="tabela.valorInvoice" 
+                 class="form-control mask2" placeholder="Valor Invoice"
+                 currencyMask [options]="{align: 'left' }">
+                 
+              </div>
+             <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
+                <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
+              </div>
+        </div>
+        <div class="form-row" >
+             <div class="form-group col-md-5">
+                  <input 
+                  type="text" id="vlPago" name="vlPago" [(ngModel)]="tabela.valorPago" 
+                  class="form-control mask2" placeholder="Valor Pago"
+                  currencyMask [options]="{align: 'left' }">
+              </div>
+             <div class="form-group col-md-3">
+                 <input 
+                    type="text" id="cotacao" name="cotacao" 
+                    [(ngModel)]="tabela.cotacao" class="form-control mask"  placeholder="Cotação"
+                    currencyMask 
+                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
             </div>
-            <div class="form-row" >
-                <div class="form-group col-md-5">
-                    <input id="di" name="di"  [(ngModel)]="tabela.numDI" class="form-control" placeholder="Nº D.I">
-                </div>
-                <div class="form-group col-md-5">
-                    <input type="text" id="vlDolar" name="vlDolar" [(ngModel)]="tabela.valorInvoice" class="form-control mask2" placeholder="Valor Invoice">
-                </div>
-                <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
-                    <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
-                </div>
-            </div>
-            <div class="form-row" >
-                <div class="form-group col-md-5">
-                    <input type="text" id="vlPago" name="vlPago" [(ngModel)]="tabela.valorPago" class="form-control mask2" placeholder="Valor Pago">
-                </div>
-                <div class="form-group col-md-3">
-                    <input type="text" id="cotacao" name="cotacao" [(ngModel)]="tabela.cotacao" class="form-control mask"  placeholder="Cotação">
-                </div>
-                <div class="form-group col-md-4">
-                    <input id="vlReal" name="vlReal" [(ngModel)]="tabela.valorReal" class="form-control mask"  placeholder="Valor Real">
-                </div>
-            </div>
+            <div class="form-group col-md-4">
+                  <input 
+                  id="vlReal" name="vlReal" [(ngModel)]="tabela.valorReal" class="form-control mask"  
+                  placeholder="Valor Real"
+                  currencyMask 
+                  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+              </div>
+         </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-5">
-                        <input id="dtFecha" name="dtFecha" type="date" [(ngModel)]="tabela.dtFechamento" class="form-control" placeholder="Dt. Fechamento">
-                </div>
-                <div class="form-group col-md-7">
-                    <input name="banco" [(ngModel)]="tabela.banco" class="form-control" placeholder="Banco">
-                </div>
-            </div>
+         <div class="form-row">
+            <div class="form-group col-md-5">
+                     <input id="dtFecha" name="dtFecha" type="date" [(ngModel)]="tabela.dtFechamento" class="form-control" placeholder="Dt. Fechamento">
+             </div>
+             <div class="form-group col-md-7">
+                <input list="bancos" name="banco" [(ngModel)]="tabela.banco" class="form-control" placeholder="Banco">
+                <datalist id="bancos">
+                    <option value="BANCO ITAU">
+                    <option value="BANCO BRADESCO">
+                    <option value="BANCO SANTANDER">
+                    <option value="BANCO DO BRASIL">
+                    <option value="BANCO CAIXA">
+                  </datalist>
+             </div>
+           </div>
             
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <input name="contrato" [(ngModel)]="tabela.numContrato" class="form-control" placeholder="Nº Contrato" >
-                </div>
-                <div class="form-group col-md-6">
-                    <input name="modal"  [(ngModel)]="tabela.modal" class="form-control" placeholder="Modal" >
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <input id="nBlHawb"  name="nBlHawb"  [(ngModel)]="tabela.conhecimento" class="form-control" placeholder="Nº BL/HAWB" >
-                </div>
-            </div>
-            <div class="custom-file" id="customFile" lang="es">
-                <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
-                <label class="custom-file-label" for="exampleInputFile">
+         <div class="form-row">
+             <div class="form-group col-md-6">
+                   <input name="contrato" [(ngModel)]="tabela.numContrato" class="form-control" placeholder="Nº Contrato" >
+             </div>
+             <div class="form-group col-md-6">
+                  <input list="modais" name="modal"  [(ngModel)]="tabela.modal" class="form-control" placeholder="Modal" >
+                  <datalist id="modais">
+                    <option value="MARÍTIMO">
+                    <option value="AÉREO">
+                  </datalist>
+              </div>
+         </div>
+        <div class="form-row">
+             <div class="form-group col-md-6">
+                  <input id="nBlHawb"  name="nBlHawb"  [(ngModel)]="tabela.conhecimento" class="form-control" placeholder="Nº BL/HAWB" >
+             </div>
+          </div>
+        <div class="custom-file" id="customFile" lang="es">
+             <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+             <label class="custom-file-label" for="exampleInputFile">
                 Anexar Contrato
-                </label>
-            </div>
-            <div class="custom-file" id="customFile" lang="es" style="margin-top: 10px;">
-                <input type="file" class="custom-file-input c2" id="exampleInputFile" aria-describedby="fileHelp">
-                <label class="custom-file-label" for="exampleInputFile">
+             </label>
+         </div>
+         <div class="custom-file" id="customFile" lang="es" style="margin-top: 10px;">
+              <input type="file" class="custom-file-input c2" id="exampleInputFile" aria-describedby="fileHelp">
+             <label class="custom-file-label" for="exampleInputFile">
                 Anexar Swift
-                </label>
-            </div>
+             </label>
+          </div>
             <!-- <div class="form-group">
                     <label class="custom-file-label" class="label">Anexar Contrato</label>
                     <input type="file" style="border: solid thin; background-color: white;"name="anxSwift" class="form-control-file">
                 </div> -->
-            <div class="form-group" style="margin-top: 10px;">
-                <button type="submit"  class="btn btn-lg btn-block btn-info" style="width: 100px;" (click)="salvarNaTabela()" >Enviar</button>
-
+         <div class="form-group" style="margin-top: 10px;">
+              <button type="submit"  class="btn btn-lg btn-block btn-info" style="width: 100px;" (click)="salvarNaTabela()" >Enviar</button>
             </div>
          
         </form>

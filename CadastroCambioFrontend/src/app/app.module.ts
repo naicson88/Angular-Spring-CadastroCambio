@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TabelaComponent } from './tabela/tabela.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     HeaderComponent,
     FooterComponent,
     TabelaComponent,
-    CadastroComponent,   
+    CadastroComponent,
+      
   
   ],
   
@@ -29,7 +31,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CurrencyMaskModule
   ],
   providers: [
    
