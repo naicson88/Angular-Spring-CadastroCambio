@@ -12,6 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 import { TabelaComponent } from './tabela/tabela.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { EditartabelaComponent } from './editartabela/editartabela.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -23,8 +26,9 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     FooterComponent,
     TabelaComponent,
     CadastroComponent,
+    EditartabelaComponent
+   
       
-  
   ],
   
   imports: [
@@ -32,7 +36,9 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule .forRoot() // ToastrModule added
   ],
   providers: [
    

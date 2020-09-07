@@ -45,5 +45,10 @@ public class TabelaServiceImpl implements TabelaDetailService {
 		
 		return tabela;
 	}
+	
+	@Override
+	public List<Tabela> findPorDia() {
+		return tabelaRepository.findPorDia();
+	}
 
 }

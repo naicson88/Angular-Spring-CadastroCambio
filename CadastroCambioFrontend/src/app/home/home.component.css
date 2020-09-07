@@ -120,5 +120,20 @@ label input[type="checkbox"] {
     display: none;
 }
 
+#somaTabela {
+    border-bottom: solid thin;
+    width: 25%;
+    height: 25px;
+}
+
+.exemplo{
+    display: inline;
+    background-color:green;
+    color: white;
+    padding: 2px;
+    padding-right: 1px;
+    padding-left: 1px;
+    
+}
 
 

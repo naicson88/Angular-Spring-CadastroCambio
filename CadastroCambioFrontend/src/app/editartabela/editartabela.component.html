@@ -1,30 +1,27 @@
 
-<p>
-    <a class="btn btn-primary" id="open" data-toggle="collapse" href="#collapseExample" role="button"
-     aria-expanded="false" aria-controls="collapseExample" >
-      Cadastrar
-    </a>
-</p>
-<div class="collapse" id="collapseExample" width="256px" style="box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);">
+
     <div class="card card-body" style="border: solid thin #1E90FF;">
         <h1 class="display-6 card-header" 
-        style="margin-bottom: 20px;background-color: #1E90FF;color: white;"> Cadastrar </h1>
+        style="margin-bottom: 20px;background-color: #FFC125;"> Editar </h1>
 
         <form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="form-group">
             <input type="hidden"  name="id" [(ngModel)]="tabela.id">
 
             <div class="form-row">
                 <div class="form-group col-md-5">
-                    <input   id="dtVenc" name="vencimento" [(ngModel)]="tabela.vencimento "  type="date"
+                    <input   id="dtVenc" name="vencimento" [(ngModel)]="tabela.vencimento"  type="date"
                     ng-model-options="{timezone: 'UTC'}"
-                   onkeyup="
+                    onkeyup="
                         var v = this.value;
                         if (v.match(/^\d{2}$/) !== null) {
                             this.value = v + '/';
                         } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
                             this.value = v + '/';
                         }"
-                    maxlength="10" class="form-control" placeholder="Vencimento">
+                    maxlength="10" class="form-control" placeholder="Vencimento"> 
+                    <p style="font-size: smaller;">
+                        Data atual: {{tabela.vencimento |  date:"dd/MM/yyyy" }}      
+                    </p> 
                 </div>
                 <div class="form-group col-md-8">
                     <input  id="fornecedor" name="fornecedor"  [(ngModel)]="tabela.fornecedor" class="form-control" placeholder="Fornecedor" required>
@@ -87,9 +84,14 @@
 
          <div class="form-row">
             <div class="form-group col-md-5">
-                     <input 
-                     id="dtFecha" name="dtFecha" type="date" [(ngModel)]="tabela.dtFechamento" class="form-control" placeholder="Dt. Fechamento">
-             </div>
+            <input ng-model-options="{timezone: 'UTC'}"
+            
+            id="dtFecha" name="dtFecha" type="date" [(ngModel)]="tabela.dtFechamento" class="form-control" placeholder="Dt. Fechamento">
+                
+            <p style="font-size: smaller;">
+                Data atual: {{tabela.dtFechamento | date:"dd/MM/yyyy" }}      
+            </p> 
+        </div>
              <div class="form-group col-md-7">
                 <input list="bancos" name="banco" [(ngModel)]="tabela.banco" class="form-control" placeholder="Banco">
                 <datalist id="bancos">
@@ -136,9 +138,8 @@
                     <input type="file" style="border: solid thin; background-color: white;"name="anxSwift" class="form-control-file">
                 </div> -->
          <div class="form-group" style="margin-top: 10px;">
-              <button type="submit"  class="btn btn-lg btn-block btn-info" style="width: 100px;" (click)="salvarNaTabela()" >Enviar</button>
+              <button type="submit"  class="btn btn-lg btn-block btn-warning" style="width: 100px;" (click)="atualizarTabela(tabela)"> Editar </button>
             </div>
          
         </form>
     </div>
-</div>

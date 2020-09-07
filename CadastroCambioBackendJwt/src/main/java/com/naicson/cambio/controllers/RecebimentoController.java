@@ -1,6 +1,5 @@
 package com.naicson.cambio.controllers;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,47 +13,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.naicson.cambio.model.Tabela;
-import com.naicson.cambio.services.TabelaDetailService;
+import com.naicson.cambio.model.Recebimento;
+import com.naicson.cambio.services.RecebimentoDetailService;
 
 @RestController
-@RequestMapping({"/cambio/tabela"})
+@RequestMapping({"/cambio/recebimento"})
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-public class TabelaController {
+public class RecebimentoController {
 	
 	@Autowired
-	TabelaDetailService tabelaService;
+	RecebimentoDetailService recebimentoService;
 	
 	@GetMapping
-	public List<Tabela> listar(){
-		return tabelaService.listar();
+	public List <Recebimento> listar(){
+		return recebimentoService.listar();
 	}
 	
 	@PostMapping
-	public Tabela adicionar(@RequestBody Tabela tabela) {
-		return tabelaService.add(tabela);
+	public Recebimento adicionar (@RequestBody Recebimento recebimento) {
+		return recebimentoService.add(recebimento);
 	}
 	
 	@GetMapping(path = {"/{id}"})
-	public Tabela listarId(@PathVariable("id") int id) {
-		return tabelaService.listarId(id);
+	public Recebimento listarId(@PathVariable("id") int id) {
+		return recebimentoService.listarId(id);
 	}
 	
 	@PutMapping(path = {"/{id}"})
-	public Tabela editar(@RequestBody Tabela tabela, @PathVariable("id") int id) {
-		tabela.setId(id);
-		return tabelaService.editar(tabela);
+	public Recebimento editar(@RequestBody Recebimento recebimento, @PathVariable("id") int id ) {
+		recebimento.setId(id);
+		return recebimentoService.editar(recebimento);
 	}
 	
-	@DeleteMapping(path = ("/{id}"))
-	public Tabela deletar(@PathVariable("id") int id) {
-		return tabelaService.deletar(id);
+	@DeleteMapping(path = {"/{id}"})
+	public Recebimento deletar(@PathVariable ("id") int id) {
+		return recebimentoService.deletar(id);
 	}
 	
-	@GetMapping("/pordia")
-	public List<Tabela> findPorDia() {
 	
-			return tabelaService.findPorDia();
-		
-	}
+	
 }

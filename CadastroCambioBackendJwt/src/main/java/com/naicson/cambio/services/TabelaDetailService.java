@@ -13,4 +13,6 @@ public interface TabelaDetailService {
 	Tabela add(Tabela pessoa);
 	Tabela editar(Tabela pessoa);
 	Tabela deletar(int id );
+	
+	List <Tabela> findPorDia();
 }

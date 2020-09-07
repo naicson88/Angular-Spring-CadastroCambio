@@ -2,21 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { TokenstorageService } from '../tokenstorage.service';
 import { Router } from '@angular/router';
+import { TabelaServiceService } from '../tabela-service.service';
+import { Tabela } from '../classes/tabela';
+import * as $ from 'jquery';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
+  constructor(private login :TokenstorageService, private serviceTabela: TabelaServiceService,) { }
 
-
-  constructor(private login :TokenstorageService, private router: Router) { }
-
+  tabela: Tabela[];
+   somar:number;
+  
+  
   ngOnInit() {
     
-  
+    this.serviceTabela.vencimentoHome().subscribe(
+      data => {
+        console.log(this.tabela = data)
+      } )
+
+      
+      
   }
 //Renomeia a div que mostra a tabela detabalha de cambio dia entre MOSTRAR/ESCONDER
   colapseCheckDetalhado(){
@@ -35,6 +48,25 @@ export class HomeComponent implements OnInit {
       '<iframe style="float: right" src="http://currencyrate.today/load-converter?&amp;lg=pt&amp;tz=-3s&amp;fm=USD&amp;to=BRL&amp;st=info&amp;lr=1&amp;rd=0"  width="220" height="258" frameborder="0" scrolling="no"> </iframe>'   
        
     )
+  }
+
+  
+    somarValoresMarcados(){
+    var total = 0;
+   
+     //$('.chk').change(function(){
+      
+      //var resultado = (<HTMLSelectElement>document.getElementById('resultado')).innerHTML;
+       $('.chk:checked').each(function(){
+         total += parseFloat($(this).closest('tr').find('.valorInvoice').text().replace("$", "").replace(',', '')
+         .replace(" ", ""));
+        });
+        
+       $("#resultado").html("US$ " + total.toLocaleString('en-US', {maximumFractionDigits: 2, minimumFractionDigits: 2}));
+       //return  resultado += "US$ " + total.toString();
+       
+     //})
+     
   }
 
 }

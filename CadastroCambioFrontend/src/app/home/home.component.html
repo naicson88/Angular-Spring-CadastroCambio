@@ -82,7 +82,7 @@
             <caption style="caption-side:top;text-align: center;">Cambios a vencer próximos 10 dias</caption>
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th>Somar</th>
                 <th scope="col">Vencimento</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Valor</th>
@@ -90,48 +90,27 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+
+              <tr *ngFor="let tabela of tabela" id="linhaTabelaHome">
+                <td width="5%"> <input type="checkbox"  class="chk" (change)="somarValoresMarcados()" >
+                  
+                </td> 
+                <td style="text-align: center;">{{tabela.vencimento | date:"dd/MM/yyyy" }} </td>
+                <td>{{tabela.fornecedor}}</td>
+                <td class="valorInvoice" >{{tabela.valorInvoice | currency:'$ '}}</td>
+                <td>{{tabela.tipo}}</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-              </tr>
+
             </tbody>
           </table>
+
+          <div id="somaTabela">
+            <ul style="display: inline">
+              <li class="exemplo item-um">Total soma ($):</li>  <span class="resultado" id="resultado">{{somar | currency:'BRL'}} </span> 
+             <!--<li class="exemplo item-dois">Cotação: <input type="text" width="20px"> </li>
+              <li class="exemplo item-tres">Valor em Real (R$): <p class="valorReal"></p></li> -->
+            </ul>
+          </div>
     </div>
 
     <div id="divTabelas" >
@@ -140,7 +119,6 @@
             <caption style="caption-side:top; text-align: center;">Cambios fechados nos ultimos 5 dias</caption>
             <thead >
               <tr>
-                <th scope="col" >#</th>
                 <th scope="col">Dt. Pagamento</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Valor USD</th>

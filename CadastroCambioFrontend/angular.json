@@ -24,10 +24,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
-              "src/assets/script/cotacao.js"
+             "../node_modules/jquery/dist/jquery.min.js"
+              
             ]
           },
           "configurations": {
