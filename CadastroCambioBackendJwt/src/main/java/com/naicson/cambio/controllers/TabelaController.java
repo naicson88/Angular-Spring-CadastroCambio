@@ -57,4 +57,9 @@ public class TabelaController {
 			return tabelaService.findPorDia();
 		
 	}
+	
+	@GetMapping("/ultimosFechados")
+	public List<Tabela> ultimosFechados(){
+		return tabelaService.ultimosFechados();
+	}
 }

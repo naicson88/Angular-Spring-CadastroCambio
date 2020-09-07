@@ -77,7 +77,7 @@
             </div>
        </div>
 
-       <div id="tableHome " >
+       <div>
         <table class="table table-sm table-striped table-bordered " id="tabelaHome" style="margin-top: 30px;">
             <caption style="caption-side:top;text-align: center;">Cambios a vencer próximos 10 dias</caption>
             <thead>
@@ -106,85 +106,34 @@
 
           <div id="somaTabela">
             <ul style="display: inline">
-              <li class="exemplo item-um">Total soma ($):</li>  <span class="resultado" id="resultado">{{somar | currency:'BRL'}} </span> 
+              <p class="exemplo item-um">Total:</p>  <span class="resultado" id="resultado"></span> 
              <!--<li class="exemplo item-dois">Cotação: <input type="text" width="20px"> </li>
               <li class="exemplo item-tres">Valor em Real (R$): <p class="valorReal"></p></li> -->
             </ul>
           </div>
     </div>
 
-    <div id="divTabelas" >
+    <div >
     <div id="tableFechados " >
         <table class="table table-sm table-striped table-bordered " id="tabelaFechados" style="margin-top: 30px;border-radius: 10px;">
-            <caption style="caption-side:top; text-align: center;">Cambios fechados nos ultimos 5 dias</caption>
+            <caption style="caption-side:top; text-align: center;">Cambios fechados nos ultimos 7 dias</caption>
             <thead >
-              <tr>
+              <tr >
                 <th scope="col">Dt. Pagamento</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Valor USD</th>
+                <th scope="col">Cotação</th>
                 <th scope="col">Valor Real</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
+              <tr *ngFor="let tabela of ultimosDias">
+                
+                <td>{{tabela.dtFechamento |  date:"dd/MM/yyyy" }}</td>
+                <td>{{tabela.fornecedor}}</td>
+                <td>{{tabela.valorPago | currency:'$ '}}</td>
+                <td>{{tabela.cotacao | currency:'R$ '}}</td>
+                <td>{{tabela.valorReal | currency:'R$ '}}</td>
               </tr>
             </tbody>
           </table>

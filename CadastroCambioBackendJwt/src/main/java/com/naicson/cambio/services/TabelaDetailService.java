@@ -15,4 +15,5 @@ public interface TabelaDetailService {
 	Tabela deletar(int id );
 	
 	List <Tabela> findPorDia();
+	List <Tabela> ultimosFechados();
 }

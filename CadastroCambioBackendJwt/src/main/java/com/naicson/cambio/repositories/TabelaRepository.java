@@ -19,4 +19,7 @@ public interface TabelaRepository extends JpaRepository<Tabela, Long> {
 	
 	@Query(value = "(select * from tabela where vencimento >= CURDATE() + 10)", nativeQuery = true)
 	List<Tabela> findPorDia();
+	
+	@Query(value = "select * from tabela where dt_fechamento BETWEEN curdate() - 7 AND curdate()", nativeQuery = true)
+	List<Tabela> ultimosFechados();
 }

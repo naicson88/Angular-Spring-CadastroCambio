@@ -13,10 +13,11 @@ export class TabelaServiceService {
   constructor(private http: HttpClient, private tokenstorage: TokenstorageService) { }
 
    Url = 'http://localhost:8080/cambio/tabela';
+   head = new HttpHeaders().set('Authorization', `Bearer ${this.tokenstorage.getToken()}`)
 
    getListaTabela(){
      return this.http.get<Tabela[]>(this.Url,{
-      headers: new HttpHeaders().set('Authorization', `Bearer ${this.tokenstorage.getToken()}`)
+      headers: this.head
      });
    }
 
@@ -46,10 +47,16 @@ export class TabelaServiceService {
 
    //PEGA O VENDCIMENTO DOS PROXIMOS DEZ DIAS
    vencimentoHome(){
-
     return this.http.get<Tabela[]>(this.Url+"/pordia",{
-      headers: new HttpHeaders().set('Authorization', `Bearer ${this.tokenstorage.getToken()}`)
+      headers: this.head
      });
      
+   }
+
+   //PEGA OS CAMBIOS FECHADOS DOS ULTIMOS SETE DIAS
+   ultimosFechados(){
+    return this.http.get<Tabela[]>(this.Url+"/ultimosFechados",{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.tokenstorage.getToken()}`)
+     });
    }
 }

@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(private login :TokenstorageService, private serviceTabela: TabelaServiceService,) { }
 
   tabela: Tabela[];
+  ultimosDias: Tabela[]
    somar:number;
   
   
@@ -28,7 +29,11 @@ export class HomeComponent implements OnInit {
         console.log(this.tabela = data)
       } )
 
-      
+      this.serviceTabela.ultimosFechados().subscribe(
+        data => {
+          console.log(this.ultimosDias = data)
+        }
+      )
       
   }
 //Renomeia a div que mostra a tabela detabalha de cambio dia entre MOSTRAR/ESCONDER
@@ -50,22 +55,15 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  
+  //FUNÇÃO PARA SOMAR OS CAMBIOS A SEREM FECHADOS NOS PROX DEZ DIAS NA
     somarValoresMarcados(){
     var total = 0;
-   
-     //$('.chk').change(function(){
-      
-      //var resultado = (<HTMLSelectElement>document.getElementById('resultado')).innerHTML;
        $('.chk:checked').each(function(){
          total += parseFloat($(this).closest('tr').find('.valorInvoice').text().replace("$", "").replace(',', '')
          .replace(" ", ""));
         });
         
        $("#resultado").html("US$ " + total.toLocaleString('en-US', {maximumFractionDigits: 2, minimumFractionDigits: 2}));
-       //return  resultado += "US$ " + total.toString();
-       
-     //})
      
   }
 

@@ -51,4 +51,9 @@ public class TabelaServiceImpl implements TabelaDetailService {
 		return tabelaRepository.findPorDia();
 	}
 
+	@Override
+	public List<Tabela> ultimosFechados() {
+		return tabelaRepository.ultimosFechados();
+	}
+
 }
