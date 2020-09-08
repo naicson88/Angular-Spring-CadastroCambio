@@ -15,6 +15,7 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 import { EditartabelaComponent } from './editartabela/editartabela.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CreditoComponent } from './credito/credito.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     TabelaComponent,
     CadastroComponent,
-    EditartabelaComponent
+    EditartabelaComponent,
+    CreditoComponent
    
       
   ],
