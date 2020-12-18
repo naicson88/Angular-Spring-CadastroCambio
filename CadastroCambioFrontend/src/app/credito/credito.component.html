@@ -1,7 +1,120 @@
 
 <app-header></app-header>
-<p>credito works!</p>
+<h1>Tabela de Créditos Recebidos</h1>
 
+
+<div id="tabelaSoma">
+    <table>
+        <tr>
+            <th>Fornecedor</th>
+            <th>Total Dólar</th>
+            <th>Valor Real</th>
+        </tr>
+
+        <tr>
+            <td width="200px">Microsoft</td>
+            <td width="150px">Foo</td>
+            <td width="150px">01/01/19</td>
+        </tr>
+        <tr>
+            <td width="200px">Intel</td>
+            <td width="150px">Foo</td>
+            <td width="150px">01/01/19</td>
+        </tr>
+        <tr>
+            <td width="200px">Outros</td>
+            <td width="150px">Foo</td>
+            <td width="150px">01/01/19</td>
+        </tr>
+          
+    </table>
+</div>
+
+<div id="cadastroReceb">
+    <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Cadastrar
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+           
+            <form>
+                <div class="form-row">
+
+                    <div class="form-group col-sm-2">
+                      <label for="inputEmail4">Data</label>
+                      <input type="date" class="form-control" id="inputEmail4" placeholder="Data">
+                    </div>
+  
+                    <div class="form-group col-sm-4">
+                      <label for="inputPassword4">Fornecedor</label>
+                      <input type="text" class="form-control" id="inputPassword4" placeholder="Fornecedor">
+                    </div>
+                  
+                      <div class="form-group col-sm-2">
+                          <label for="inputAddress">Valor Dólar</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="US$ "
+                          currencyMask [options]="{align: 'left' }">
+                        </div>
+  
+                        <div class="form-group col-sm-2">
+                          <label for="inputAddress2">Cotação</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="R$ "
+                          currencyMask 
+                            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+                        </div>
+  
+                        <div class="form-group col-sm-2">
+                          <label for="inputCity">Valor Real</label>
+                          <input type="text" class="form-control" id="inputCity" placeholder="R$ "
+                          currencyMask 
+                        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+                        </div>
+  
+                        
+                          <div class="form-group col-sm-2">
+                            <label for="inputEmail4">Banco</label>
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Banco">
+                          </div>
+  
+                          <div class="form-group col-sm-3">
+                            <label for="inputPassword4">Descrição</label>
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Descrição">
+                          </div>                
+                  </div>
+                  <button type="submit" class="btn btn-info">Enviar</button>
+               
+            </form>
+        </div>
+      </div>
+</div>
+
+<div id="tabelaCadastrados">
+
+<table class="responstable">
+  <tr>
+    <th>Data</th>
+    <th>Fornecedor</th>
+    <th>Valor Dólar</th>
+    <th>Cotação</th>
+    <th>Valor Real</th>
+    <th>Banco</th>
+    <th>Descrição</th>
+  </tr>
+  
+  <tr *ngFor="let receb of receb">
+    <td width="9%">{{receb.data  |  date:"dd/MM/yyyy"}}</td>
+    <td width="17%">{{receb.pagador}}</td>
+    <td width="10%">{{receb.vlrDolar | currency:'$ '}}</td>
+    <td width="10%">{{receb.cotacao |currency:'R$ '}}</td>
+    <td width="10%">{{receb.vlrReal | currency:'R$ '}}</td>
+    <td width="14%">{{receb.banco}}</td>
+    <td>{{receb.observacao}}</td>
+  </tr>
+  
+</table>
+</div>
  <footer id="footer" class="footer navbar-fixed-bottom">
         <app-footer></app-footer>
     </footer>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TabelaServiceService } from '../tabela-service.service';
+import { TabelaServiceService } from '../services/tabela-service.service';
 import { Tabela } from '../classes/tabela';
 import { ToastrService } from 'ngx-toastr';
 

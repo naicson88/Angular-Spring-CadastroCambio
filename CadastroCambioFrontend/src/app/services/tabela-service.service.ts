@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Tabela } from './classes/tabela';
+import { Tabela } from '../classes/tabela';
 import { TokenstorageService } from './tokenstorage.service';
 import { isEmpty } from 'rxjs/operators';
 

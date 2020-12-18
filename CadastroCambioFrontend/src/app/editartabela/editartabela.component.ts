@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TabelaServiceService } from '../tabela-service.service';
+import { TabelaServiceService } from '../services/tabela-service.service';
 import { Router } from '@angular/router';
 import { Tabela } from '../classes/tabela';
 import { $ } from 'protractor';

@@ -106,7 +106,7 @@ table {
 #footer{
     
         width: 161%;
-        margin-top: 100px;
+        margin-top: 30%;
         bottom: 0;
         position: relative;
         margin-left: -20px;
@@ -130,9 +130,11 @@ label input[type="checkbox"] {
     display: inline;
     background-color:green;
     color: white;
+    font-weight: bold;
+    border-radius: 5px;
     padding: 2px;
-    padding-right: 1px;
-    padding-left: 1px;
+    margin-right: 3px;
+
     
 }
 

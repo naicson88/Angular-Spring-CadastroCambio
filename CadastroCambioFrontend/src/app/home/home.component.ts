@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
-import { TokenstorageService } from '../tokenstorage.service';
+import { TokenstorageService } from '../services/tokenstorage.service';
 import { Router } from '@angular/router';
-import { TabelaServiceService } from '../tabela-service.service';
+import { TabelaServiceService } from '../services/tabela-service.service';
 import { Tabela } from '../classes/tabela';
 import * as $ from 'jquery';
 import { element } from 'protractor';
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       )
       
   }
-//Renomeia a div que mostra a tabela detabalha de cambio dia entre MOSTRAR/ESCONDER
+//Renomeia a div que mostra a tabela detalhada de cambio dia entre MOSTRAR/ESCONDER
   colapseCheckDetalhado(){
     var btn = document.querySelector("#btnColapse");
 

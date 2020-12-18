@@ -6,3 +6,51 @@
     position: relative;
     margin-left: 0px;
 }
+
+.responstable {
+    margin: 1em 0;
+    width: 100%;
+    overflow: hidden;  
+    background: #FFF;
+    color:#024457;
+    border-radius: none;
+    
+}
+#tabelaPrincipal >tbody>tr:nth-child(odd)>td,
+tr {
+    border:1px solid #D9E4E6; }
+
+    .responstable>tbody>tr:nth-child(odd)>td { 
+        background-color: rgba(94,93,82,.1)
+    }  
+
+    th {
+        
+        border: 1px solid #FFF;
+        background-color: #167F92;
+        color:  #FFF;
+        padding: 3px;  
+    }
+
+    body {
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        color: #024457;
+        background: #f2f2f2;
+      }
+
+#tabelaCadastrados{
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
+#tabelaSoma{
+    margin-left: 2%;
+}
+
+#cadastroReceb{
+    margin: 2% 0 -4% 2%;
+
+    width: 92%;
+}
+  

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RestapiService } from '../restapi.service';
+import { RestapiService } from '../services/restapi.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Usuario } from '../classes/usuario';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
-import { TokenstorageService } from '../tokenstorage.service';
+import { TokenstorageService } from '../services/tokenstorage.service';
 
 @Component({
   selector: 'app-login',

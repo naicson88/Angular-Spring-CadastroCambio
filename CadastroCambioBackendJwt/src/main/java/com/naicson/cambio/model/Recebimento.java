@@ -1,5 +1,7 @@
 package com.naicson.cambio.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,13 +23,14 @@ public class Recebimento {
 		private Double vlrReal;
 		private String banco;
 		private String observacao;
+		private Date data;
 		
 		public Recebimento() {
 			
 		}
 
 		public Recebimento(int id, String pagador, Double vlrDolar, Double cotacao, Double vlrReal, String banco,
-				String observacao) {
+				String observacao, Date data) {
 			super();
 			this.id = id;
 			this.pagador = pagador;
@@ -36,6 +39,7 @@ public class Recebimento {
 			this.vlrReal = vlrReal;
 			this.banco = banco;
 			this.observacao = observacao;
+			this.data = data;
 		}
 
 		public int getId() {
@@ -98,6 +102,14 @@ public class Recebimento {
 
 		public void setBanco(String banco) {
 			this.banco = banco;
+		}
+
+		public Date getData() {
+			return data;
+		}
+
+		public void setData(Date data) {
+			this.data = data;
 		}
 		
 		

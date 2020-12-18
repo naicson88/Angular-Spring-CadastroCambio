@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
-import { Usuario } from './classes/usuario';
+import { Usuario } from '../classes/usuario';
 import { Router } from '@angular/router';
 import { TokenstorageService } from './tokenstorage.service';
 

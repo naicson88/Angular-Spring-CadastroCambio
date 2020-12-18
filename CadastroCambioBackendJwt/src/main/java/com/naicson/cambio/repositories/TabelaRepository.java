@@ -17,7 +17,7 @@ public interface TabelaRepository extends JpaRepository<Tabela, Long> {
 	Tabela save(Tabela tabela);
 	void delete(Tabela tabela);
 	
-	@Query(value = "select * from tabela where vencimento between CURDATE() and curdate() + 10;", nativeQuery = true)
+	@Query(value = "select * from tabela where vencimento >= CURDATE() and curdate() + 10;", nativeQuery = true)
 	List<Tabela> findPorDia();
 	
 	@Query(value = "select * from tabela where dt_fechamento BETWEEN curdate() - 7 AND curdate()", nativeQuery = true)
